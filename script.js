@@ -1,33 +1,34 @@
 document.getElementById('gerar-senha').addEventListener('click', function () {
-    const incluirMaiusculas = document.getElementById('maiusculas').checked;
-    const incluirMinusculas = document.getElementById('minusculas').checked;
-    const incluirNumeros = document.getElementById('numeros').checked;
-    const incluirSimbolos = document.getElementById('simbolos').checked;
-
-    const comprimentoSenha = 12; // Você pode permitir que o usuário defina esse valor futuramente
+    const usarMaiusculas = document.getElementById('maiusculas').checked;
+    const usarMinusculas = document.getElementById('minusculas').checked;
+    const usarNumeros = document.getElementById('numeros').checked;
+    const usarSimbolos = document.getElementById('simbolos').checked;
 
     const letrasMaiusculas = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
     const letrasMinusculas = 'abcdefghijklmnopqrstuvwxyz';
     const numeros = '0123456789';
-    const simbolos = '!@#$%^&*()_+[]{}|;:,.<>?';
+    const simbolos = '!@#$%^&*()-_=+[]{}|;:,.<>?/';
 
     let caracteres = '';
-    if (incluirMaiusculas) caracteres += letrasMaiusculas;
-    if (incluirMinusculas) caracteres += letrasMinusculas;
-    if (incluirNumeros) caracteres += numeros;
-    if (incluirSimbolos) caracteres += simbolos;
+    if (usarMaiusculas) caracteres += letrasMaiusculas;
+    if (usarMinusculas) caracteres += letrasMinusculas;
+    if (usarNumeros) caracteres += numeros;
+    if (usarSimbolos) caracteres += simbolos;
 
     if (caracteres === '') {
-        document.getElementById('senha').value = 'Selecione pelo menos uma opção!';
+        document.getElementById('senha').value = 'Selecione ao menos uma opção!';
         return;
     }
 
+    const tamanhoSenha = 12;
     let senha = '';
-    for (let i = 0; i < comprimentoSenha; i++) {
-        const indice = Math.floor(Math.random() * caracteres.length);
-        senha += caracteres.charAt(indice);
+
+    for (let i = 0; i < tamanhoSenha; i++) {
+        const rand = Math.floor(Math.random() * caracteres.length);
+        senha += caracteres[rand];
     }
 
     document.getElementById('senha').value = senha;
 });
+
 
