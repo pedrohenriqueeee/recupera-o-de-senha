@@ -3,32 +3,87 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Segurança Digital</title>
+    <title>Segurança Digital: Matemática para Senhas Seguras</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
+    <header>
         <h1>Segurança Digital</h1>
         <p>Utilizando matemática para programar senhas seguras</p>
+    </header>
 
-        <!-- Opções de seleção para o tipo de senha -->
-        <div class="options">
-            <label><input type="checkbox" id="maiusculas" checked> Letras maiúsculas</label>
-            <label><input type="checkbox" id="minusculas" checked> Letras minúsculas</label>
-            <label><input type="checkbox" id="numeros" checked> Números</label>
-            <label><input type="checkbox" id="simbolos" checked> Símbolos</label>
-        </div>
+    <main>
+        <section id="intro">
+            <h2>Por que senhas seguras são importantes?</h2>
+            <p>No mundo digital atual, senhas fracas são a principal causa de violações de segurança. Usando conceitos matemáticos, podemos criar senhas que são difíceis de adivinhar mas fáceis de lembrar.</p>
+        </section>
 
-        <!-- Botão para gerar a senha -->
-        <button id="gerar-senha">Gerar Senha</button>
+        <section id="math-concepts">
+            <h2>Conceitos Matemáticos para Senhas Seguras</h2>
+            <div class="concept-card">
+                <h3>Permutações e Combinações</h3>
+                <p>Quanto mais caracteres possíveis em cada posição, maior o número de combinações possíveis.</p>
+                <p class="formula">n! / (n - r)!</p>
+            </div>
+            <div class="concept-card">
+                <h3>Entropia de Informação</h3>
+                <p>Mede a imprevisibilidade de uma senha. Calculada como log₂(N^L), onde N é o número de caracteres possíveis e L é o comprimento.</p>
+            </div>
+            <div class="concept-card">
+                <h3>Números Primos</h3>
+                <p>Podem ser usados para criar padrões memoráveis mas difíceis de adivinhar.</p>
+            </div>
+        </section>
 
-        <!-- Campo para mostrar a senha gerada -->
-        <input type="text" id="senha" readonly placeholder="Sua senha aparecerá aqui">
+        <section id="password-generator">
+            <h2>Gerador de Senhas Matemáticas</h2>
+            <div class="generator-container">
+                <div class="controls">
+                    <label for="length">Tamanho da senha (8-32):</label>
+                    <input type="number" id="length" min="8" max="32" value="12">
+                    
+                    <label for="complexity">Complexidade:</label>
+                    <select id="complexity">
+                        <option value="simple">Simples (letras)</option>
+                        <option value="medium">Média (letras + números)</option>
+                        <option value="complex" selected>Complexa (todos caracteres)</option>
+                        <option value="math">Matemática (fórmula baseada)</option>
+                    </select>
+                    
+                    <button id="generate-btn">Gerar Senha</button>
+                </div>
+                
+                <div class="result">
+                    <label for="password">Sua nova senha segura:</label>
+                    <input type="text" id="password" readonly>
+                    <button id="copy-btn">Copiar</button>
+                    
+                    <div class="strength-meter">
+                        <div class="strength-bar"></div>
+                        <span id="strength-text">Força: -</span>
+                    </div>
+                    
+                    <div id="entropy">Entropia: - bits</div>
+                </div>
+            </div>
+        </section>
 
-        <footer>
-            <p>&copy; 2025 Segurança Digital | Criado com 💡 por ChatGPT</p>
-        </footer>
-    </div>
+        <section id="tips">
+            <h2>Dicas para Senhas Seguras</h2>
+            <ul>
+                <li>Use pelo menos 12 caracteres</li>
+                <li>Combine letras maiúsculas, minúsculas, números e símbolos</li>
+                <li>Evite palavras do dicionário ou informações pessoais</li>
+                <li>Considere usar frases memoráveis com substituições</li>
+                <li>Use um gerenciador de senhas para armazená-las com segurança</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2023 Segurança Digital - Todos os direitos reservados</p>
+        <p>Projeto educacional sobre segurança de senhas</p>
+    </footer>
 
     <script src="script.js"></script>
 </body>
