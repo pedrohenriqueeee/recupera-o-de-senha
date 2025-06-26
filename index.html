@@ -5,6 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gerador de Senha Segura</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Ajuste do layout */
+        .options {
+            margin-left: 3.5cm; /* Deixa as opções mais à esquerda */
+        }
+
+        .options label {
+            display: block; /* Faz com que as opções fiquem em linha uma abaixo da outra */
+            padding-left: 0.5cm; /* Deixa um pequeno espaçamento à esquerda para alinhamento */
+            font-size: 1.1em; /* Tamanho maior para facilitar a leitura */
+        }
+
+        .options input[type="checkbox"] {
+            margin-right: 10px; /* Dá um pequeno espaçamento entre o checkbox e o texto */
+        }
+
+        /* Alinhamento do botão de gerar senha */
+        #gerar-senha {
+            margin-left: 3.5cm; /* Alinha o botão com as opções */
+            margin-top: 20px; /* Espaçamento superior */
+        }
+    </style>
 </head>
 <body>
     <div class="container">
@@ -12,10 +34,10 @@
         <p>Utilizando matemática para criar senhas fortes.</p>
 
         <div class="options">
-            <label><input type="checkbox" id="maiusculas" checked> Incluir letras maiúsculas</label>
-            <label><input type="checkbox" id="minusculas" checked> Incluir letras minúsculas</label>
-            <label><input type="checkbox" id="numeros" checked> Incluir números</label>
-            <label><input type="checkbox" id="simbolos" checked> Incluir símbolos</label>
+            <label><input type="checkbox" id="maiusculas" checked> Letras maiúsculas</label>
+            <label><input type="checkbox" id="minusculas" checked> Letras minúsculas</label>
+            <label><input type="checkbox" id="numeros" checked> Números</label>
+            <label><input type="checkbox" id="simbolos" checked> Símbolos</label>
         </div>
 
         <button id="gerar-senha">Gerar Senha</button>
