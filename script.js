@@ -1,22 +1,33 @@
-// Função para gerar uma senha segura
-function gerarSenha() {
-    const caracteres = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_-+=<>?/";
-    const tamanhoSenha = 16; // Tamanho da senha gerada
-    let senha = '';
+document.getElementById('gerar-senha').addEventListener('click', function () {
+    const incluirMaiusculas = document.getElementById('maiusculas').checked;
+    const incluirMinusculas = document.getElementById('minusculas').checked;
+    const incluirNumeros = document.getElementById('numeros').checked;
+    const incluirSimbolos = document.getElementById('simbolos').checked;
 
-    // Usar a data atual e funções matemáticas para criar um valor único
-    let valorUnico = Math.random() * Date.now();
-    valorUnico = Math.floor(valorUnico);
+    const comprimentoSenha = 12; // Você pode permitir que o usuário defina esse valor futuramente
 
-    // Gerar a senha combinando valores aleatórios e o valor único
-    for (let i = 0; i < tamanhoSenha; i++) {
-        let index = (valorUnico + i) % caracteres.length;
-        senha += caracteres[index];
+    const letrasMaiusculas = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    const letrasMinusculas = 'abcdefghijklmnopqrstuvwxyz';
+    const numeros = '0123456789';
+    const simbolos = '!@#$%^&*()_+[]{}|;:,.<>?';
+
+    let caracteres = '';
+    if (incluirMaiusculas) caracteres += letrasMaiusculas;
+    if (incluirMinusculas) caracteres += letrasMinusculas;
+    if (incluirNumeros) caracteres += numeros;
+    if (incluirSimbolos) caracteres += simbolos;
+
+    if (caracteres === '') {
+        document.getElementById('senha').value = 'Selecione pelo menos uma opção!';
+        return;
     }
 
-    // Exibir a senha no campo de entrada
-    document.getElementById('senha').value = senha;
-}
+    let senha = '';
+    for (let i = 0; i < comprimentoSenha; i++) {
+        const indice = Math.floor(Math.random() * caracteres.length);
+        senha += caracteres.charAt(indice);
+    }
 
-// Adicionar evento ao botão para gerar a senha
-document.getElementById('gerar-senha').addEventListener('click', gerarSenha);
+    document.getElementById('senha').value = senha;
+});
+
