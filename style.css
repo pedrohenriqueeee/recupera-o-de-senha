@@ -1,3 +1,4 @@
+/* Estilo para o corpo da página */
 body {
     margin: 0;
     font-family: Arial, sans-serif;
@@ -7,21 +8,29 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
+    text-align: center;
 }
 
+/* Estilo para o container que envolve todo o conteúdo */
 .container {
     background-color: #122b4c;
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0 0 15px rgba(0,0,0,0.4);
-    text-align: center;
-    width: 350px;
+    width: 400px; /* Tamanho do container */
 }
 
+/* Estilo para o título */
 h1 {
     margin-bottom: 10px;
 }
 
+/* Estilo para o texto de descrição */
+p {
+    margin-bottom: 20px;
+}
+
+/* Estilo para as opções de checkboxes */
 .options {
     text-align: left;
     margin: 20px 0;
@@ -36,27 +45,33 @@ h1 {
 input[type="text"] {
     width: 100%;
     padding: 10px;
-    font-size: 1em;
+    font-size: 1.1em;
     border: none;
     border-radius: 5px;
     margin-top: 15px;
+    background-color: #f0f0f0;
+    color: #333;
 }
 
+/* Estilo para o botão */
 button {
     background-color: #1e90ff;
     color: white;
     border: none;
     padding: 10px 20px;
-    font-size: 1em;
+    font-size: 1.1em;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    width: 100%; /* Faz o botão ocupar toda a largura */
+    margin-top: 15px;
 }
 
 button:hover {
     background-color: #3aa0ff;
 }
 
+/* Estilo para o rodapé */
 footer {
     margin-top: 20px;
     font-size: 0.9em;
